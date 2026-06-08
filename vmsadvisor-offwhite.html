@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VMS Advisor — Consultoria Independente de Infraestrutura Crítica | Data Centers e Conectividade</title>
+  <meta name="description" content="Consultoria para seleção, comparação e contratação de Data Centers, conectividade e infraestrutura crítica. São Paulo."/>
+  <meta name="keywords" content="data center São Paulo, colocation, cloud connect, infraestrutura crítica, consultor data center, advisor infraestrutura, RSFN, disaster recovery, Megaport"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.vmsadvisor.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.vmsadvisor.com/"/>
+  <meta property="og:title" content="VMS Advisor — Infrastructure Advisory Independente"/>
+  <meta property="og:description" content="Consultoria independente para decisões de infraestrutura crítica. Data Centers, conectividade e ambientes de missão crítica."/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"VMS Advisor","description":"Consultoria independente para seleção e contratação de infraestrutura crítica.","url":"https://www.vmsadvisor.com","email":"contato@vmsadvisor.com","telephone":"+55-11-99843-2954","address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"areaServed":"BR","serviceType":["Infrastructure Advisory","Data Center Selection","Colocation Consulting"],"sameAs":["https://www.linkedin.com/in/vagner-medeiros-advisor"]}
+  </script>
+  <!-- Apollo Visitor Tracking -->
+  <!-- <script src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=XXXXX" defer></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ── RESET ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+
+    /* ── TOKENS ── */
+    :root{
+      --offwhite:   #F6F4EF;
+      --white:      #FFFFFF;
+      --navy:       #0D1B35;
+      --navy-mid:   #162340;
+      --ink:        #1A1D2B;
+      --blue:       #1A4FD8;
+      --blue-dim:   rgba(26,79,216,0.10);
+      --blue-bd:    rgba(26,79,216,0.20);
+      --gold:       #B8962E;
+      --gray:       #6B7280;
+      --gray-l:     #9CA3AF;
+      --border:     #E4E0D8;
+      --border-dk:  rgba(255,255,255,0.10);
+    }
+
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--offwhite);color:var(--ink);line-height:1.65;overflow-x:hidden}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(246,244,239,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .logo{font-size:1rem;font-weight:700;letter-spacing:-0.02em;color:var(--navy);text-decoration:none}
+    .logo b{color:var(--blue)}
+    .nav-cta{font-size:0.82rem;font-weight:500;color:var(--white);text-decoration:none;padding:9px 22px;border-radius:4px;background:var(--blue);transition:all 0.2s}
+    .nav-cta:hover{background:#1342b8}
+
+    /* ── HERO ── */
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 60px 64px;overflow:hidden;text-align:center;background:var(--offwhite)}
+    #topo{position:absolute;inset:0;width:100%;height:100%;opacity:0.35;pointer-events:none}
+    .hero-veil{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(246,244,239,0) 20%,rgba(246,244,239,0.97) 100%);pointer-events:none}
+    .hero-body{position:relative;z-index:2;max-width:820px}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.68rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:28px;padding:6px 16px;border:1px solid var(--blue-bd);border-radius:2px;background:var(--blue-dim)}
+
+    h1{font-size:clamp(2.2rem,4.8vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;color:var(--navy);margin-bottom:22px}
+    h1 em{font-style:normal;color:var(--blue)}
+
+    .hero-sub{font-size:1rem;font-weight:400;color:var(--gray);max-width:560px;margin:0 auto 44px;line-height:1.8}
+
+    .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;font-size:0.88rem;font-weight:500;border-radius:4px;text-decoration:none;cursor:pointer;font-family:'Inter',sans-serif;border:none;transition:all 0.2s}
+    .btn-p{background:var(--blue);color:#fff}
+    .btn-p:hover{background:#1342b8;transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,79,216,0.25)}
+    .btn-s{background:transparent;color:var(--gray);border:1px solid var(--border)}
+    .btn-s:hover{border-color:var(--gray);color:var(--ink)}
+
+    /* HERO METRICS */
+    .hero-strip{position:relative;z-index:2;width:100%;max-width:760px;margin-top:64px;display:flex;border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--white)}
+    .strip-item{flex:1;padding:20px 28px;text-align:center;border-right:1px solid var(--border)}
+    .strip-item:last-child{border-right:none}
+    .strip-n{font-size:1.65rem;font-weight:700;color:var(--navy);line-height:1;margin-bottom:4px;letter-spacing:-0.02em}
+    .strip-l{font-size:0.68rem;color:var(--gray-l);text-transform:uppercase;letter-spacing:0.10em}
+
+    /* ── SECTIONS ── */
+    section{padding:96px 60px}
+    .inner{max-width:1080px;margin:0 auto}
+    .section-label{font-size:0.68rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    h2{font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:700;letter-spacing:-0.025em;line-height:1.18;color:var(--navy);margin-bottom:14px}
+    h2.white{color:#fff}
+    .section-lead{font-size:0.95rem;font-weight:400;color:var(--gray);max-width:520px;line-height:1.8;margin-bottom:52px}
+    .section-lead.white{color:rgba(255,255,255,0.65)}
+
+    /* ── DARK SECTIONS ── */
+    .dark{background:var(--navy)}
+    .dark .section-label{color:var(--gold)}
+
+    /* ── PROBLEMA (dark) ── */
+    .problema-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .problema-stat{text-align:center;padding:40px 32px;border:1px solid var(--border-dk);border-radius:4px}
+    .problema-stat .num{font-size:3.2rem;font-weight:700;color:#fff;line-height:1;margin-bottom:6px;letter-spacing:-0.04em}
+    .problema-stat .label{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6}
+    .problema-copy p{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.85;margin-bottom:18px;font-weight:300}
+    .problema-copy p:last-child{margin-bottom:0}
+    .problema-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+
+    /* ── PROCESSO ── */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .step{padding:36px 28px;border-right:1px solid var(--border);background:var(--white)}
+    .step:last-child{border-right:none}
+    .step:hover{background:var(--offwhite)}
+    .step-n{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;color:var(--blue);margin-bottom:16px}
+    .step h3{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.35}
+    .step p{font-size:0.83rem;color:var(--gray);line-height:1.7}
+    .step-divider{width:24px;height:2px;background:var(--blue);margin-bottom:16px;border-radius:1px}
+
+    /* ── SOBRE (dark) ── */
+    .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .sobre-photo-row{display:flex;align-items:center;gap:20px;margin-bottom:32px}
+    .sobre-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(255,255,255,0.15);flex-shrink:0}
+    .sobre-id strong{display:block;font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:3px}
+    .sobre-id span{font-size:0.78rem;color:rgba(255,255,255,0.5);display:block;margin-bottom:10px}
+    .sobre-id a{display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;color:rgba(255,255,255,0.5);text-decoration:none;border:1px solid var(--border-dk);border-radius:3px;padding:5px 10px;transition:all 0.2s}
+    .sobre-id a:hover{color:#fff;border-color:rgba(255,255,255,0.3)}
+    .sobre-copy p{font-size:0.92rem;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:16px;font-weight:300}
+    .sobre-copy p:last-child{margin-bottom:0}
+    .sobre-blockquote{border:1px solid var(--border-dk);border-radius:4px;padding:40px;background:rgba(255,255,255,0.04)}
+    .sobre-blockquote::before{content:'"';font-size:4rem;color:var(--blue);line-height:0.8;display:block;margin-bottom:16px;font-family:Georgia,serif}
+    .sobre-blockquote p{font-size:1.15rem;font-weight:600;color:#fff;line-height:1.5;letter-spacing:-0.015em}
+    .sobre-blockquote cite{display:block;margin-top:20px;font-size:0.78rem;color:rgba(255,255,255,0.4);font-style:normal}
+
+    /* ── PARA QUEM ── */
+    .for-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:4px;overflow:hidden}
+    .for-card{background:var(--white);padding:32px 24px}
+    .for-card:hover{background:var(--offwhite)}
+    .for-icon{width:36px;height:36px;border-radius:4px;background:var(--blue-dim);border:1px solid var(--blue-bd);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+    .for-icon svg{width:17px;height:17px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .for-card h3{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .for-card p{font-size:0.82rem;color:var(--gray);line-height:1.65}
+
+    /* ── FORMULÁRIO ── */
+    .form-section{background:var(--offwhite)}
+    .form-wrap{display:grid;grid-template-columns:1fr 1.55fr;gap:64px;align-items:start}
+    .form-intro h2{margin-bottom:14px}
+    .form-intro p{font-size:0.9rem;color:var(--gray);line-height:1.8;margin-bottom:28px}
+    .perks{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .perk{display:flex;align-items:flex-start;gap:11px;font-size:0.84rem;color:var(--gray);line-height:1.6}
+    .perk-check{width:16px;height:16px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--blue-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:9px;color:var(--blue)}
+
+    .form-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:40px;border-top:3px solid var(--blue)}
+    .prog{display:flex;gap:4px;margin-bottom:28px}
+    .prog-d{height:2px;flex:1;border-radius:1px;background:var(--border);transition:background 0.3s}
+    .prog-d.on{background:var(--blue)}
+    .fs{display:none}
+    .fs.active{display:block}
+    .step-tag{font-size:0.66rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+    .step-h{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:24px;line-height:1.3}
+    label.lbl{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--gray);margin-top:14px;margin-bottom:5px}
+    label.lbl:first-of-type{margin-top:0}
+    input,select,textarea{width:100%;background:var(--offwhite);border:1px solid var(--border);border-radius:3px;padding:11px 13px;font-size:0.88rem;font-family:'Inter',sans-serif;color:var(--ink);outline:none;transition:border-color 0.2s;appearance:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--blue);background:#fff}
+    input::placeholder,textarea::placeholder{color:var(--gray-l)}
+    select option{background:#fff}
+    textarea{resize:vertical;min-height:86px}
+    .opts{display:flex;flex-direction:column;gap:7px;margin-top:4px}
+    .opt{display:flex;align-items:center;gap:10px;cursor:pointer;padding:11px 13px;border:1px solid var(--border);border-radius:3px;font-size:0.85rem;color:var(--gray);background:var(--offwhite);transition:all 0.18s}
+    .opt:hover{border-color:var(--blue-bd);color:var(--ink);background:#fff}
+    .opt.on{border-color:var(--blue);background:var(--blue-dim);color:var(--navy)}
+    .opt input[type=radio]{display:none}
+    .odot{width:12px;height:12px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:all 0.18s}
+    .opt.on .odot{border-color:var(--blue);background:var(--blue)}
+    .opts-2{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:4px}
+    .fnav{display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+    .fbk{font-size:0.82rem;color:var(--gray-l);background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:color 0.2s}
+    .fbk:hover{color:var(--ink)}
+    .consent-label{display:flex;align-items:flex-start;gap:10px;margin-top:18px;cursor:pointer}
+    .consent-label input[type=checkbox]{width:auto;margin-top:2px;accent-color:var(--blue);flex-shrink:0}
+    .consent-label span{font-size:0.78rem;color:var(--gray);line-height:1.6}
+    .consent-label a{color:var(--blue);text-decoration:none}
+    .success-wrap{text-align:center;padding:32px 16px}
+    .success-ico{width:56px;height:56px;border-radius:50%;margin:0 auto 18px;background:var(--blue-dim);border:1px solid var(--blue-bd);display:flex;align-items:center;justify-content:center;font-size:22px}
+    .success-wrap h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+    .success-wrap p{font-size:0.86rem;color:var(--gray);line-height:1.7}
+    .success-links{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+    .success-link{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--blue);text-decoration:none;border:1px solid var(--blue-bd);border-radius:3px;padding:7px 14px;background:var(--blue-dim);transition:all 0.2s}
+    .success-link:hover{background:rgba(26,79,216,0.15)}
+
+    /* ── FOOTER ── */
+    footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--white)}
+    .flogo{font-size:0.95rem;font-weight:700;letter-spacing:-0.02em;color:var(--navy);text-decoration:none}
+    .flogo b{color:var(--blue)}
+    footer p{font-size:0.75rem;color:var(--gray-l)}
+    footer a{color:var(--gray-l);text-decoration:none;transition:color 0.2s}
+    footer a:hover{color:var(--ink)}
+    .footer-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+
+    /* ── PRIVACIDADE ── */
+    .privacy-section{padding:64px 60px;background:var(--offwhite);border-top:1px solid var(--border)}
+    .privacy-section h2{font-size:1.4rem;color:var(--navy);margin-bottom:18px}
+    .privacy-section p{font-size:0.86rem;color:var(--gray);line-height:1.85;margin-bottom:14px;max-width:760px}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ── POR QUE ── */
+    .porque-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:4px;overflow:hidden;margin-top:48px}
+    .porque-card{background:var(--white);padding:36px 28px}
+    .porque-card:hover{background:var(--offwhite)}
+    .porque-n{font-size:0.68rem;font-weight:600;letter-spacing:0.14em;color:var(--blue);margin-bottom:14px}
+    .porque-card h3{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.35}
+    .porque-card p{font-size:0.83rem;color:var(--gray);line-height:1.7}
+    .porque-divider{width:24px;height:2px;background:var(--blue);margin-bottom:16px;border-radius:1px}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){nav{padding:16px 24px}section{padding:72px 24px}.hero{padding:96px 24px 52px}.steps{grid-template-columns:1fr 1fr}.sobre-grid,.problema-grid,.form-wrap{grid-template-columns:1fr;gap:40px}.for-grid,.porque-grid{grid-template-columns:1fr 1fr}.hero-strip{flex-wrap:wrap}.strip-item{flex:1 1 calc(50% - 1px)}footer{padding:24px;flex-direction:column;text-align:center}.privacy-section{padding:64px 24px}}
+    @media(max-width:560px){h1{font-size:2rem}.steps{grid-template-columns:1fr}.for-grid{grid-template-columns:1fr}.opts-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">VMS<b>.</b>Advisor</a>
+  <a href="#diagnostico" class="nav-cta">Fale com um advisor</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="topo"></canvas>
+  <div class="hero-veil"></div>
+  <div class="hero-body">
+    <div class="eyebrow">Consultoria em Infraestrutura Crítica</div>
+    <h1>Decisões de infraestrutura crítica<br>merecem um <em>processo estruturado.</em></h1>
+    <p class="hero-sub">
+      Ajudamos empresas a tomar decisões mais seguras sobre Data Centers, conectividade e ambientes de missão crítica, reduzindo riscos e aumentando a previsibilidade dos projetos.
+    </p>
+    <div class="hero-ctas">
+      <a href="#diagnostico" class="btn btn-p">
+        Fale com um advisor
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#processo" class="btn btn-s">Ver o processo</a>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="strip-item"><div class="strip-n">20+</div><div class="strip-l">Anos de mercado</div></div>
+    <div class="strip-item"><div class="strip-n">Data Centers</div><div class="strip-l">e Colocation</div></div>
+    <div class="strip-item"><div class="strip-n">Conectividade</div><div class="strip-l">e Cloud Connect</div></div>
+    <div class="strip-item"><div class="strip-n">BR</div><div class="strip-l">Cobertura nacional</div></div>
+  </div>
+</section>
+
+<!-- DESAFIO (dark) -->
+<section class="dark" id="problema">
+  <div class="inner">
+    <div class="problema-grid">
+      <div class="problema-copy reveal">
+        <div class="section-label">O que avaliamos</div>
+        <h2 class="white">Cada decisão de infraestrutura envolve dimensões que precisam ser consideradas em conjunto.</h2>
+        <p>Requisitos técnicos, regulatórios, financeiros e de crescimento raramente estão todos claros no início do processo. Parte do nosso trabalho é ajudar a estruturá-los antes de qualquer avaliação de mercado.</p>
+        <p>Isso garante que as alternativas sejam comparadas com os mesmos critérios e que a decisão final seja fundamentada em informações completas.</p>
+        <p>O resultado é um processo mais previsível, com menos surpresas durante a execução e mais segurança na hora de assinar o contrato.</p>
+      </div>
+      <div class="reveal">
+        <div class="problema-stats-grid">
+          <div class="problema-stat">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Requisitos técnicos</div>
+            <div class="label">Arquitetura, disponibilidade, redundância e SLA</div>
+          </div>
+          <div class="problema-stat">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Continuidade de negócios</div>
+            <div class="label">Disaster recovery, RTO, RPO e resiliência operacional</div>
+          </div>
+          <div class="problema-stat">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Conectividade e ecossistema</div>
+            <div class="label">Acesso a clouds, interconexão e latência para a operação</div>
+          </div>
+          <div class="problema-stat">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Aspectos financeiros</div>
+            <div class="label">Estrutura contratual, condições de expansão e previsibilidade de custos</div>
+          </div>
+          <div class="problema-stat">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Crescimento futuro</div>
+            <div class="label">Escalabilidade, capacidade planejada e flexibilidade contratual</div>
+          </div>
+          <div class="problema-stat" style="grid-column:span 1">
+            <div class="num" style="font-size:1rem;letter-spacing:0;line-height:1.4">Compliance e regulatório</div>
+            <div class="label">BACEN, LGPD, PCI DSS e requisitos setoriais específicos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section id="processo">
+  <div class="inner">
+    <div class="section-label">O Processo</div>
+    <h2>Como conduzimos o processo do início ao contrato assinado.</h2>
+    <p class="section-lead reveal">Um processo estruturado em quatro etapas para apoiar sua empresa em cada fase da decisão de infraestrutura. Atuamos em projetos envolvendo colocation, conectividade, Cloud Connect, disaster recovery e ambientes de missão crítica.</p>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-n">ETAPA 01</div>
+        <div class="step-divider"></div>
+        <h3>Diagnóstico e definição de requisitos.</h3>
+        <p>Entendemos a operação, os requisitos técnicos, regulatórios e financeiros. Estruturamos o cenário antes de qualquer abordagem ao mercado.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">ETAPA 02</div>
+        <div class="step-divider"></div>
+        <h3>Avaliação do mercado.</h3>
+        <p>Identificamos e qualificamos os fornecedores mais aderentes ao contexto da empresa. Organizamos a avaliação com critérios claros e documentados.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">ETAPA 03</div>
+        <div class="step-divider"></div>
+        <h3>Análise comparativa e recomendação.</h3>
+        <p>Comparamos as alternativas nos aspectos técnicos, operacionais e financeiros. Apresentamos uma recomendação fundamentada com os finalistas do processo.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">ETAPA 04</div>
+        <div class="step-divider"></div>
+        <h3>Negociação e contratação.</h3>
+        <p>Acompanhamos o processo até a definição da melhor alternativa para o projeto. Site tours coordenados e suporte até a assinatura do contrato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE (dark) -->
+<section class="dark">
+  <div class="inner">
+    <div class="sobre-grid">
+      <div class="sobre-copy reveal">
+        <div class="section-label">Sobre</div>
+        <div class="sobre-photo-row">
+          <img src="vagner-medeiros.jpg" alt="Vagner Medeiros da Silva" class="sobre-photo"/>
+          <div class="sobre-id">
+            <strong>Vagner Medeiros da Silva</strong>
+            <span>Advisor em Infraestrutura Crítica — VMS Advisor</span>
+            <a href="https://www.linkedin.com/in/vagner-medeiros-advisor" target="_blank" rel="noopener">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <h2 class="white">Experiência prática em Data Centers, conectividade e continuidade de negócios.</h2>
+        <p>Ao longo de mais de duas décadas de atuação no mercado de infraestrutura digital, participei de projetos envolvendo Data Centers, conectividade, continuidade de negócios e ambientes de missão crítica.</p>
+        <p>Essa experiência permite apoiar empresas na avaliação de alternativas, na definição de requisitos e na condução de processos de contratação com mais clareza e previsibilidade.</p>
+        <p>A VMS Advisor atua de forma independente, sempre buscando a solução mais adequada para cada contexto de negócio.</p>
+      </div>
+      <div class="sobre-blockquote reveal">
+        <p>"A decisão de infraestrutura que você tomar nos próximos meses vai impactar sua operação pelos próximos anos. Vale o processo certo."</p>
+        <cite>Vagner Medeiros da Silva — Infrastructure Advisor Independente</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE A VMS ADVISOR -->
+<section style="background:var(--offwhite)">
+  <div class="inner">
+    <div class="section-label">Por que a VMS Advisor</div>
+    <h2>Por que contar com um advisor especializado.</h2>
+    <p class="section-lead reveal">Um advisor especializado ajuda a estruturar critérios, comparar alternativas e apoiar a tomada de decisão. Decisões de infraestrutura têm impacto direto na operação por anos. Contar com alguém que conhece o mercado e conduz o processo com critérios claros reduz riscos e melhora o resultado final.</p>
+    <div class="porque-grid reveal">
+      <div class="porque-card">
+        <div class="porque-n">01</div>
+        <div class="porque-divider"></div>
+        <h3>Experiência prática em infraestrutura crítica</h3>
+        <p>Mais de 20 anos atuando em projetos de Data Centers, conectividade e continuidade de negócios nos principais ambientes do mercado brasileiro.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-n">02</div>
+        <div class="porque-divider"></div>
+        <h3>Visão independente</h3>
+        <p>Avaliação baseada nos requisitos da operação e nos objetivos do negócio do cliente.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-n">03</div>
+        <div class="porque-divider"></div>
+        <h3>Processo estruturado</h3>
+        <p>Critérios técnicos, regulatórios e financeiros definidos antes de qualquer avaliação. Isso reduz riscos e garante que a decisão seja auditável e bem fundamentada.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-n">04</div>
+        <div class="porque-divider"></div>
+        <h3>Acompanhamento até a contratação</h3>
+        <p>Do diagnóstico inicial à formalização do contrato. Estamos presentes em cada etapa para que o cliente chegue à decisão com segurança e clareza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section>
+  <div class="inner">
+    <div class="section-label">Para quem</div>
+    <h2>Empresas que precisam de mais clareza antes de decidir.</h2>
+    <p class="section-lead reveal">O processo da VMS Advisor é mais relevante quando há ambientes de alta disponibilidade, operações reguladas ou crescimento acelerado em jogo.</p>
+    <div class="for-grid reveal">
+      <div class="for-card">
+        <div class="for-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Financeiro e Fintech</h3>
+        <p>Ambientes regulados pelo BACEN, conexão RSFN, alta disponibilidade e compliance. Requisitos que precisam estar claros antes da contratação.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3>Varejo e E-commerce</h3>
+        <p>Alta escala transacional, picos previsíveis e ambientes distribuídos. Infraestrutura que precisa estar dimensionada corretamente desde o início.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>SaaS e Healthtech</h3>
+        <p>Crescimento acelerado que exige escalabilidade, conectividade com latência previsível e SLA alinhado ao modelo de negócio.</p>
+      </div>
+      <div class="for-card">
+        <div class="for-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Indústria e Logística</h3>
+        <p>Operações distribuídas, missão crítica e disaster recovery estruturado. Decisões que impactam a continuidade do negócio por anos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section id="diagnostico" class="form-section">
+  <div class="inner">
+    <div class="form-wrap">
+      <div class="form-intro">
+        <div class="section-label">Vamos conversar</div>
+        <h2>Compartilhe o contexto do seu projeto.</h2>
+        <p>Preencha o formulário com as informações da sua operação. Após o envio, analisaremos as informações e entraremos em contato para uma conversa inicial sobre o cenário e os próximos passos.</p>
+        <ul class="perks">
+          <li class="perk"><span class="perk-check">✓</span>Conversa inicial para entendimento do cenário e dos objetivos do projeto</li>
+          <li class="perk"><span class="perk-check">✓</span>Suas informações são tratadas com sigilo e não circulam sem sua autorização</li>
+          <li class="perk"><span class="perk-check">✓</span>Processo conduzido de forma independente, com foco nos objetivos da sua operação</li>
+          <li class="perk"><span class="perk-check">✓</span>O nível de envolvimento é definido conforme o contexto e os objetivos de cada projeto</li>
+        </ul>
+      </div>
+      <div class="form-card">
+        <div class="prog" id="prog">
+          <div class="prog-d on"></div>
+          <div class="prog-d"></div>
+          <div class="prog-d"></div>
+          <div class="prog-d"></div>
+        </div>
+        <!-- Etapa 1 -->
+        <div class="fs active" id="s0">
+          <div class="step-tag">Etapa 1 de 4</div>
+          <div class="step-h">Quem está avaliando?</div>
+          <label class="lbl">Nome</label><input type="text" id="f-nome" placeholder="Nome completo" autocomplete="name"/>
+          <label class="lbl">Cargo</label><input type="text" id="f-cargo" placeholder="CTO, Head de Infraestrutura..."/>
+          <label class="lbl">E-mail corporativo</label><input type="email" id="f-email" placeholder="voce@empresa.com.br" autocomplete="email"/>
+          <label class="lbl">Telefone</label><input type="tel" id="f-tel" placeholder="+55 (11) 99999-9999"/>
+          <label class="lbl">Empresa</label><input type="text" id="f-emp" placeholder="Nome da empresa" autocomplete="organization"/>
+          <div class="fnav"><span></span><button class="btn btn-p" onclick="go(0)">Continuar →</button></div>
+        </div>
+        <!-- Etapa 2 -->
+        <div class="fs" id="s1">
+          <div class="step-tag">Etapa 2 de 4</div>
+          <div class="step-h">Qual é o setor de atuação?</div>
+          <div class="opts">
+            <label class="opt" onclick="pick(this,'seg','Financeiro / Fintech')"><input type="radio" name="seg"/><span class="odot"></span>Financeiro / Fintech</label>
+            <label class="opt" onclick="pick(this,'seg','Telecom')"><input type="radio" name="seg"/><span class="odot"></span>Telecom</label>
+            <label class="opt" onclick="pick(this,'seg','Varejo / E-commerce')"><input type="radio" name="seg"/><span class="odot"></span>Varejo / E-commerce</label>
+            <label class="opt" onclick="pick(this,'seg','Saúde / Healthtech')"><input type="radio" name="seg"/><span class="odot"></span>Saúde / Healthtech</label>
+            <label class="opt" onclick="pick(this,'seg','Outro')"><input type="radio" name="seg"/><span class="odot"></span>Outro setor</label>
+          </div>
+          <div class="fnav"><button class="fbk" onclick="back(1)">← Voltar</button><button class="btn btn-p" onclick="go(1)">Continuar →</button></div>
+        </div>
+        <!-- Etapa 3 -->
+        <div class="fs" id="s2">
+          <div class="step-tag">Etapa 3 de 4</div>
+          <div class="step-h">Sobre a operação atual</div>
+          <label class="lbl">Como é o ambiente de infraestrutura hoje?</label>
+          <textarea id="f-infra" placeholder="Onde roda a operação, quais clouds, como está estruturada a conectividade..." style="min-height:100px;"></textarea>
+          <label class="lbl">O que motivou esta avaliação agora?</label>
+          <textarea id="f-desafio" placeholder="Crescimento, vencimento de contrato, compliance, redução de custo..." style="min-height:78px;"></textarea>
+          <label class="lbl">O que não pode acontecer na sua operação?</label>
+          <input type="text" id="f-risco" placeholder="Indisponibilidade, latência acima de X ms, perda de dados..."/>
+          <div class="fnav"><button class="fbk" onclick="back(2)">← Voltar</button><button class="btn btn-p" onclick="go(2)">Continuar →</button></div>
+        </div>
+        <!-- Etapa 4 -->
+        <div class="fs" id="s3">
+          <div class="step-tag">Etapa 4 de 4</div>
+          <div class="step-h">Contexto da decisão</div>
+          <label class="lbl">Estágio da decisão</label>
+          <div class="opts">
+            <label class="opt" onclick="pick(this,'estagio','Explorando opções')"><input type="radio" name="estagio"/><span class="odot"></span>Explorando opções</label>
+            <label class="opt" onclick="pick(this,'estagio','Avaliação em andamento')"><input type="radio" name="estagio"/><span class="odot"></span>Avaliação em andamento</label>
+            <label class="opt" onclick="pick(this,'estagio','Decisão próxima')"><input type="radio" name="estagio"/><span class="odot"></span>Decisão próxima</label>
+          </div>
+          <label class="lbl">Prazo estimado</label>
+          <div class="opts-2">
+            <label class="opt" onclick="pick(this,'prazo','Menos de 3 meses')"><input type="radio" name="prazo"/><span class="odot"></span>Menos de 3 meses</label>
+            <label class="opt" onclick="pick(this,'prazo','3 a 6 meses')"><input type="radio" name="prazo"/><span class="odot"></span>3 a 6 meses</label>
+            <label class="opt" onclick="pick(this,'prazo','6 a 12 meses')"><input type="radio" name="prazo"/><span class="odot"></span>6 a 12 meses</label>
+            <label class="opt" onclick="pick(this,'prazo','Sem prazo definido')"><input type="radio" name="prazo"/><span class="odot"></span>Sem prazo definido</label>
+          </div>
+          <label class="lbl">Observações adicionais</label>
+          <textarea id="f-obs" placeholder="Contexto adicional, restrições, número de sites..." style="min-height:64px;"></textarea>
+          <label class="consent-label">
+            <input type="checkbox" id="f-consent"/>
+            <span>Li e concordo com a <a href="#privacidade">Política de Privacidade</a>. Autorizo o uso dos dados exclusivamente para fins de diagnóstico pela VMS Advisor.</span>
+          </label>
+          <div class="fnav"><button class="fbk" onclick="back(3)">← Voltar</button><button class="btn btn-p" onclick="send()">Solicitar contato →</button></div>
+        </div>
+        <!-- Sucesso -->
+        <div class="fs" id="s-ok">
+          <div class="success-wrap">
+            <div class="success-ico">✓</div>
+            <h3>Informações recebidas</h3>
+            <p>Analisaremos o contexto e entraremos em contato para uma conversa inicial sobre o projeto e os próximos passos.</p>
+            <div class="success-links">
+              <a href="https://wa.me/5511998432954" target="_blank" rel="noopener" class="success-link">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                WhatsApp
+              </a>
+              <a href="https://www.linkedin.com/in/vagner-medeiros-advisor" target="_blank" rel="noopener" class="success-link">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="flogo">VMS<b>.</b>Advisor</a>
+  <div class="footer-links">
+    <a href="mailto:contato@vmsadvisor.com">contato@vmsadvisor.com</a>
+    <a href="https://wa.me/5511998432954" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.linkedin.com/in/vagner-medeiros-advisor" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#privacidade">Privacidade</a>
+  </div>
+  <p>© 2026 VMS Advisor · São Paulo · Brasil</p>
+</footer>
+
+<!-- PRIVACIDADE -->
+<div id="privacidade" class="privacy-section">
+  <div style="max-width:760px;margin:0 auto;">
+    <div class="section-label" style="margin-bottom:14px">Política de Privacidade e Termos de Uso</div>
+    <h2>Privacidade e Termos</h2>
+    <p>A VMS Advisor coleta apenas os dados informados voluntariamente no formulário de contato, com a finalidade exclusiva de análise do cenário e retorno ao solicitante. Não compartilhamos informações com terceiros sem autorização prévia do cliente e sem necessidade relacionada ao projeto.</p>
+    <p>O tratamento dos dados segue as disposições da LGPD (Lei 13.709/2018), com base legal no consentimento do titular e no legítimo interesse para prestação dos serviços solicitados. O titular pode solicitar a exclusão ou correção de seus dados pelo e-mail <a href="mailto:contato@vmsadvisor.com" style="color:var(--blue)">contato@vmsadvisor.com</a>.</p>
+    <p>As análises e recomendações fornecidas têm caráter consultivo. A decisão final sobre contratação de infraestrutura é de exclusiva responsabilidade do cliente. A VMS Advisor atua de forma independente, sem exclusividade com fornecedores, e a remuneração é discutida e formalizada antes do início de qualquer processo.</p>
+    <p style="font-size:0.78rem;color:var(--gray-l);margin-top:20px">Última atualização: junho de 2026 · contato@vmsadvisor.com</p>
+  </div>
+</div>
+
+<script>
+// ── TOPOLOGY (off-white version) ─────────────────────────────────────
+const C=document.getElementById('topo');
+const X=C.getContext('2d');
+function sz(){C.width=window.innerWidth;C.height=window.innerHeight;}
+sz();window.addEventListener('resize',sz);
+
+const N=[
+  {x:.10,y:.20,r:10,c:'#9BB5E8'},{x:.10,y:.48,r:10,c:'#9BB5E8'},{x:.10,y:.76,r:10,c:'#9BB5E8'},
+  {x:.28,y:.36,r:16,c:'#6B93D6'},{x:.28,y:.62,r:12,c:'#6B93D6'},
+  {x:.48,y:.28,r:20,c:'#4A7AC4'},{x:.48,y:.66,r:20,c:'#4A7AC4'},
+  {x:.68,y:.22,r:12,c:'#8AAAD8'},{x:.68,y:.50,r:16,c:'#5A86C8'},{x:.68,y:.75,r:12,c:'#8AAAD8'},
+  {x:.85,y:.42,r:14,c:'#B8962E'},
+];
+const E=[[0,3],[1,3],[1,4],[2,4],[3,5],[4,6],[5,7],[5,8],[6,8],[6,9],[7,10],[8,10],[9,10],[5,6]];
+const P=E.map(([f,t])=>({f,t,p:Math.random(),sp:0.0025+Math.random()*0.003,on:Math.random()>.3}));
+let fr=0;
+function draw(){
+  X.clearRect(0,0,C.width,C.height);
+  E.forEach(([f,t])=>{
+    const a={x:N[f].x*C.width,y:N[f].y*C.height},b={x:N[t].x*C.width,y:N[t].y*C.height};
+    X.beginPath();X.moveTo(a.x,a.y);X.lineTo(b.x,b.y);
+    X.strokeStyle='rgba(26,79,216,0.08)';X.lineWidth=1;X.stroke();
+  });
+  P.forEach(p=>{
+    if(!p.on)return;
+    const a={x:N[p.f].x*C.width,y:N[p.f].y*C.height},b={x:N[p.t].x*C.width,y:N[p.t].y*C.height};
+    const x=a.x+(b.x-a.x)*p.p,y=a.y+(b.y-a.y)*p.p;
+    X.beginPath();X.arc(x,y,2,0,Math.PI*2);
+    X.fillStyle='rgba(26,79,216,0.5)';X.fill();
+    p.p+=p.sp;if(p.p>1){p.p=0;p.on=Math.random()>.1;}
+  });
+  P.forEach(p=>{if(!p.on&&Math.random()<.005)p.on=true;});
+  N.forEach(n=>{
+    const x=n.x*C.width,y=n.y*C.height;
+    const pulse=Math.sin(fr*.036+n.x*8)*.2+.8;
+    X.beginPath();X.arc(x,y,n.r+6,0,Math.PI*2);
+    X.fillStyle=n.c+'18';X.fill();
+    X.beginPath();X.arc(x,y,n.r,0,Math.PI*2);
+    X.fillStyle='rgba(246,244,239,0.9)';
+    X.strokeStyle=n.c+Math.round(pulse*180).toString(16).padStart(2,'0');
+    X.lineWidth=1.2;X.fill();X.stroke();
+  });
+  fr++;requestAnimationFrame(draw);
+}
+draw();
+
+// ── FORM ─────────────────────────────────────────────────────────────
+const D={};
+function pick(el,key,val){document.querySelectorAll(`[onclick*="'${key}'"]`).forEach(o=>o.classList.remove('on'));el.classList.add('on');D[key]=val;}
+function prog(step){document.querySelectorAll('.prog-d').forEach((d,i)=>d.classList.toggle('on',i<=step));}
+function go(from){
+  if(from===0){
+    const nome=document.getElementById('f-nome').value.trim();
+    const email=document.getElementById('f-email').value.trim();
+    if(!nome||!email){alert('Por favor preencha nome e e-mail.');return;}
+    D.nome=nome;D.cargo=document.getElementById('f-cargo').value.trim();
+    D.email=email;D.tel=document.getElementById('f-tel').value.trim();
+    D.empresa=document.getElementById('f-emp').value.trim();
+  }
+  if(from===1&&!D.seg){alert('Selecione o setor de atuação.');return;}
+  if(from===2){
+    D.infra=document.getElementById('f-infra').value.trim();
+    D.desafio=document.getElementById('f-desafio').value.trim();
+    D.risco=document.getElementById('f-risco').value.trim();
+  }
+  document.getElementById(`s${from}`).classList.remove('active');
+  document.getElementById(`s${from+1}`).classList.add('active');
+  prog(from+1);
+}
+function back(from){
+  document.getElementById(`s${from}`).classList.remove('active');
+  document.getElementById(`s${from-1}`).classList.add('active');
+  prog(from-1);
+}
+async function send(){
+  const consent=document.getElementById('f-consent');
+  if(!consent.checked){alert('Por favor confirme que leu e concorda com a Política de Privacidade.');return;}
+  D.obs=document.getElementById('f-obs').value.trim();D.consentimento='Aceito';
+  const URL='https://formspree.io/f/mbdeyjkd';
+  const msg=Object.entries(D).map(([k,v])=>`${k}: ${v}`).join('\n');
+  try{
+    const r=await fetch(URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({...D,_subject:`[VMS Advisor] Diagnóstico — ${D.empresa||D.nome}`,message:msg})});
+    showOk();
+  }catch(e){showOk();}
+}
+function showOk(){document.getElementById('s3').classList.remove('active');document.getElementById('s-ok').classList.add('active');prog(5);}
+
+// ── REVEAL ───────────────────────────────────────────────────────────
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── SMOOTH SCROLL ────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
